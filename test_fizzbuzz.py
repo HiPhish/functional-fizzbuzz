@@ -151,7 +151,7 @@ def test_fizzbuzz_contains_no_mismatch(rules: list[Rule], data: st.DataObject):
 
 
 @given(rulesets(), st.data())
-def test_fizzubzz_results_order(rules: list[Rule], data: st.DataObject):
+def test_fizzbuzz_results_order(rules: list[Rule], data: st.DataObject):
     """The rule values are in the same order they were given in."""
     n = data.draw(st.integers().filter(lambda n: any(r.test(n) for r in rules)))
     positives = (r for r in rules if r.test(n))
